@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'Inter';
+  font-weight: 100 900;
+  font-display: block;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url('/fonts/Inter-roman.var.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-weight: 100 900;
+  font-display: block;
+  font-style: italic;
+  font-named-instance: 'Italic';
+  src: url('/fonts/Inter-italic.var.woff2') format('woff2');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#__next {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@layer components {
+  input[type=range] {
+    @apply bg-transparent appearance-none;
+  }
+
+  input[type=range]::-webkit-slider-runnable-track {
+    @apply  bg-red-100 rounded-full;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    @apply w-4 h-4 rounded-full appearance-none bg-rose-400;
+  }
+
+  input[type=range]::-moz-range-track {
+    @apply bg-red-100 rounded-full;
+  }
+
+  input[type=range]::-ms-track {
+    @apply bg-red-100 rounded-full;
+  }
+
+}
+
+@supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+  }
+
+  .custom-calendar-icon {
+    display: none!important;
+  }
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
