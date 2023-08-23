@@ -10,6 +10,7 @@ export function NavLinks() {
     // ['Reviews', '/#reviews'],
     // ['Pricing', '/#pricing'],
     ['Preguntas Frecuentes', '/#faqs'],
+    ['Política de Privacidad', '/privacy-policy'],
   ].map(([label, href], index) => (
     <Link
       key={label}
